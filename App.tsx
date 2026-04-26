@@ -34,17 +34,17 @@ const WhyPlayersFailSection = () => {
   const reasons = [
     {
       title: "Tactical Blindness",
-      description: "Generic highlight reels show goals, but they don't show the tactical maturity scouts actually look for. You're showing the finish, but you're hiding the process.",
+      description: "You show them goals and tricks. Scouts want to see spatial awareness, off-the-ball movement, and decision-making against the ball. You are hiding the process.",
       icon: Eye
     },
     {
       title: "Zero Structural Authority",
-      description: "Clubs receive thousands of videos. Within 15 seconds, a poorly structured edit tells them you aren't serious about your profession.",
+      description: "Clubs receive thousands of emails weekly. If your video starts with a 30-second intro or disjointed formatting, they close it in 5 seconds.",
       icon: Target
     },
     {
       title: "The Matchday Gap",
-      description: "A mismatch between your social media presence and your matchday reality. Scouts want to see consistent, elite habits, not just a one-off flair clip.",
+      description: "There is a massive gap between your actual ability and what your footage communicates. You're losing trials to inferior players who present themselves better.",
       icon: CheckCircle2
     }
   ];
@@ -60,10 +60,10 @@ const WhyPlayersFailSection = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="font-display text-4xl lg:text-7xl font-bold leading-tight tracking-tighter mb-8 text-white">
-              Why 99% of <span className="text-neon-green italic">Elite Aspirants</span> Fail to Get Scouted.
+              Why You Are <span className="text-red-500 italic">Invisible</span> to Pro Clubs.
             </h2>
             <p className="text-xl lg:text-2xl text-white/50 max-w-3xl mx-auto leading-relaxed">
-              Talent is rarely the bottleneck. <span className="text-white font-bold">Presentation is.</span> Most players treat their recruitment assets as social media content. Pro clubs treat them as professional resumes.
+              Every day, inferior players get trials over you. Not because they have more talent, but because they understand the mechanics of recruitment. If you present like an amateur, your emails will be deleted.
             </p>
           </motion.div>
         </div>
@@ -89,9 +89,9 @@ const WhyPlayersFailSection = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center mt-16 text-lg font-bold text-neon-green uppercase tracking-widest animate-pulse"
+          className="text-center mt-16 text-lg font-bold text-red-500 uppercase tracking-widest animate-pulse"
         >
-          You are likely making these mistakes right now.
+          You are losing opportunities right now because of this.
         </motion.p>
       </div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-red-500/5 blur-[120px] rounded-full pointer-events-none" />
@@ -134,17 +134,17 @@ const SystemSection = () => {
               viewport={{ once: true }}
               className="sticky top-40"
             >
-              <span className="text-neon-green font-black uppercase tracking-widest text-xs mb-4 block">The NextGoal Framework</span>
+              <span className="text-neon-green font-black uppercase tracking-widest text-xs mb-4 block">The Filtering System</span>
               <h2 className="font-display text-5xl lg:text-7xl font-bold text-white leading-none mb-8">
-                Not a Service. <br/> <span className="text-neon-green italic">A System.</span>
+                We Engineer <br/> <span className="text-neon-green italic">Assets.</span>
               </h2>
               <p className="text-white/50 text-xl leading-relaxed">
-                Basic video editing is for YouTubers. We provide a structured recruitment preparation process designed to transition you from unseen to unstoppable.
+                We do not "edit videos." We strip your footage down to its core tactical value and rebuild it into a high-density recruitment profile designed strictly for decision-makers.
               </p>
               <div className="mt-12 p-6 rounded-xl bg-neon-green/5 border border-neon-green/20">
                 <p className="text-sm font-bold text-neon-green mb-2">Exclusivity Notice:</p>
                 <p className="text-white/60 text-sm italic italic leading-relaxed">
-                  "We do not work with every player who fits the budget. We work with players who have the work ethic to back up the footage."
+                  "We reject more players than we accept. We only work with athletes who possess the raw tactical foundation necessary to compete."
                 </p>
               </div>
             </motion.div>
@@ -405,6 +405,55 @@ const TestimonialSection = () => {
   );
 };
 
+const CoachesSection = () => {
+  return (
+    <section className="py-24 bg-matte-black border-t border-white/5 relative overflow-hidden">
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+        <div className="flex flex-col lg:flex-row gap-16 items-center">
+          <div className="lg:w-1/2">
+            <div className="flex items-center gap-2 mb-6">
+              <div className="w-8 h-[1px] bg-white/40" />
+              <span className="text-white/40 text-xs font-bold tracking-[0.2em] uppercase">
+                Notice to Scouting Departments
+              </span>
+            </div>
+            <h2 className="font-display text-4xl lg:text-7xl font-bold leading-tight tracking-tighter mb-6 text-white">
+              For Clubs & <span className="text-neon-green italic">Scouts.</span>
+            </h2>
+            <p className="text-xl text-white/50 leading-relaxed mb-8">
+              We do not represent every player who books our system. We act as a pre-filter. When you receive a NextGoal engineered profile, it means the player possesses the tactical baseline required for your level.
+            </p>
+            <ul className="space-y-4">
+              {[
+                "Zero Fluff: Only high-density, action-oriented footage.",
+                "Position-Specific: Formatted to highlight key positional metrics.",
+                "Data Verified: Clear player identification and match context.",
+                "Time Optimized: Make a definitive decision in under 90 seconds."
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-4">
+                  <CheckCircle2 className="w-6 h-6 text-neon-green shrink-0 mt-0.5" />
+                  <span className="text-white font-bold">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="lg:w-1/2">
+            <div className="relative p-10 lg:p-12 bg-white/[0.02] rounded-3xl border border-white/10 overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-br from-neon-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative z-10">
+                <span className="text-neon-green font-black uppercase tracking-widest text-xs mb-6 block">Our Commitment to Directors</span>
+                <p className="text-white/80 text-xl leading-relaxed font-medium italic">
+                  "Our objective is to drastically reduce the noise in your inbox. We condition our athletes to understand that your time is the most valuable asset in football. We package their talent so you can execute your job efficiently."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const TransformationSection = () => {
   const [activeTab, setActiveTab] = useState(0);
 
@@ -414,10 +463,10 @@ const TransformationSection = () => {
       type: "video",
       src: "https://res.cloudinary.com/dtrf1c2wm/video/upload/q_auto/f_auto/v1775667733/Before_after_fbb3cv.mp4",
       caseStudy: {
-        player: "U18 Midfielder",
-        problem: "Talent was unseen due to low-quality, unformatted match clips.",
-        action: "Strategic position-led curation and tactical spotlighting.",
-        result: "Secured Trial with Category-1 UK Academy."
+        player: "U18 Midfielder (Released)",
+        problem: "Zero responses from 50+ emails. Footage was unstructured and diluted his actual tactical intelligence.",
+        action: "Stripped out all basic passes. Built a 90-second high-density filter focusing purely on line-breaking vision.",
+        result: "Direct contact from 3 agencies; secured trial with Category-1 UK Academy."
       },
       badge: "Tactical Overhaul"
     },
@@ -426,10 +475,10 @@ const TransformationSection = () => {
       type: "video",
       src: "https://res.cloudinary.com/dtrf1c2wm/video/upload/q_auto/f_auto/v1775672653/Benjamin_%C5%A0e%C5%A1ko_Matchday_video_Vs_Eintracht_Frankfurt_football_soccer_gameday_matchday_xzlond.mp4",
       caseStudy: {
-        player: "Senior Striker",
-        problem: "Struggling to get direct agent responses with standard reels.",
-        action: "High-Calibre asset engineering focused on finishing efficiency.",
-        result: "Direct agent engagement and 2 trial invites in Germany."
+        player: "Senior Striker (Non-League)",
+        problem: "High goalscorer, but agents ignored his emails because his highlights looked like amateur park football.",
+        action: "Reformatted clips to emphasize movement off the ball, pressing intensity, and first-touch efficiency.",
+        result: "Signed professional representation; earned 2 trial invitations in the German Regionalliga."
       },
       badge: "Elite Precision",
       isVertical: true
@@ -440,9 +489,9 @@ const TransformationSection = () => {
       src: "https://www.youtube.com/embed/ZJbOvWvvRKo",
       caseStudy: {
         player: "US College Aspirant",
-        problem: "No centralized evidence of consistent technical ability.",
-        action: "Data-led tactical profile focusing on consistency metrics.",
-        result: "Awarded Full-Ride D1 Scholarship."
+        problem: "Lacked the centralized, verified match data that D1 college recruiters require to allocate scholarship budgets.",
+        action: "Engineered a data-backed technical profile proving consistent athletic baseline against high-level opponents.",
+        result: "Awarded Full-Ride NCAA D1 Scholarship within 14 days of distribution."
       },
       badge: "Scholarship Grade"
     }
@@ -568,9 +617,9 @@ const TransformationSection = () => {
 
                 <a 
                   href="#quote"
-                  className="inline-flex items-center gap-3 px-8 py-5 bg-neon-green text-black font-black rounded-2xl hover:scale-[1.03] transition-all shadow-lg group"
+                  className="inline-flex items-center gap-3 px-8 py-5 bg-neon-green text-black font-black rounded-2xl hover:scale-[1.03] transition-all shadow-[0_0_20px_rgba(204,255,0,0.3)] group uppercase tracking-widest text-xs"
                 >
-                  <span>Apply for Similar Result</span>
+                  <span>Submit Footage For Evaluation</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </motion.div>
@@ -624,10 +673,10 @@ const PathsSection = () => {
               ))}
             </ul>
             <a 
-              href="https://wa.me/447480675324?text=I'm%20ready%20to%20get%20my%20highlights%20edited."
-              className="px-12 py-5 rounded-2xl bg-white/10 text-white font-black hover:bg-white/20 transition-all uppercase tracking-widest text-sm"
+              href="#quote"
+              className="px-12 py-5 rounded-2xl bg-white/10 text-white font-black hover:bg-white/20 transition-all uppercase tracking-widest text-sm text-center"
             >
-              Get My Highlights
+              Submit For Basic Review
             </a>
           </motion.div>
 
@@ -639,15 +688,15 @@ const PathsSection = () => {
             whileHover={{ y: -10 }}
             className="p-12 rounded-[40px] bg-neon-green/5 border-2 border-neon-green/50 flex flex-col items-center text-center relative group"
           >
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-neon-green text-black px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest shadow-[0_0_20px_rgba(204,255,0,0.5)]">
-              Most Selected
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-neon-green text-black px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest shadow-[0_0_20px_rgba(204,255,0,0.5)] whitespace-nowrap">
+              Highly Selective
             </div>
             <div className="w-20 h-20 rounded-3xl bg-neon-green/10 flex items-center justify-center mb-10 group-hover:bg-neon-green/20 transition-colors">
               <Target className="w-8 h-8 text-neon-green" />
             </div>
             <h3 className="text-3xl font-display font-bold text-white mb-6">Recruitment Program</h3>
             <p className="text-white/60 text-lg leading-relaxed mb-12">
-              For serious players who want a full strategic overhaul. Includes data-led consulting and a complete recruitment asset vault.
+              For serious players pursuing immediate professional placement. A complete strategic overhaul and access to our agency network introductions.
             </p>
             <ul className="space-y-4 mb-12 text-left w-full max-w-xs mx-auto">
               {["Strategic Asset Audit", "Scout-First Formatting", "Data-Led Player Resume", "Agency Introduction Support"].map((item, i) => (
@@ -659,9 +708,9 @@ const PathsSection = () => {
             </ul>
             <a 
               href="#quote"
-              className="px-12 py-5 rounded-2xl bg-neon-green text-black font-black hover:scale-105 transition-all uppercase tracking-widest text-sm shadow-[0_0_30px_rgba(204,255,0,0.3)]"
+              className="px-12 py-5 rounded-2xl bg-neon-green text-black font-black hover:scale-105 transition-all uppercase tracking-widest text-sm shadow-[0_0_30px_rgba(204,255,0,0.3)] text-center"
             >
-              Apply for Program
+              Apply For Elite Selection
             </a>
           </motion.div>
         </div>
@@ -709,13 +758,13 @@ Strategic Notes: ${formData.notes}`;
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-500/10 border border-red-500/20 rounded-full mb-6">
               <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-              <span className="text-[10px] font-black uppercase tracking-widest text-red-500">Waitlist Active</span>
+              <span className="text-[10px] font-black uppercase tracking-widest text-red-500">Waitlist Active - Filtering Applicants</span>
             </div>
             <h2 className="font-display text-4xl lg:text-7xl font-bold leading-tight tracking-tighter mb-6 text-white">
-              Apply for <span className="text-neon-green italic">Selection.</span>
+              Apply For <span className="text-neon-green italic">Selection.</span>
             </h2>
             <p className="text-xl text-white/50 max-w-2xl mx-auto">
-              We do not work with every player. We only accept athletes who exhibit a clear professional trajectory and possess sufficient match evidence for tactical analysis.
+              We process hundreds of applications monthly. We reject the majority. Apply only if you possess the work ethic and raw footage necessary to compete at the professional level.
             </p>
           </motion.div>
         </div>
@@ -829,10 +878,10 @@ Strategic Notes: ${formData.notes}`;
 
               <button
                 type="submit"
-                className="w-full py-5 bg-neon-green text-black font-black rounded-xl hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(204,255,0,0.3)] hover:shadow-[0_0_50px_rgba(204,255,0,0.5)]"
+                className="w-full py-5 bg-neon-green text-black font-black rounded-xl hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(204,255,0,0.3)] hover:shadow-[0_0_50px_rgba(204,255,0,0.5)] uppercase tracking-widest"
               >
                 <Send className="w-5 h-5" />
-                <span>Submit Application</span>
+                <span>Submit For Evaluation</span>
               </button>
             </form>
           </motion.div>
@@ -946,15 +995,15 @@ const Navbar = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
             href="https://wa.me/447480675324"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-2.5 rounded-full text-sm font-bold text-white/80 hover:text-white border border-white/10 hover:border-neon-green/50 transition-all duration-300"
+            className="px-6 py-2.5 rounded-full text-sm font-bold text-white/80 hover:text-white border border-white/10 hover:border-neon-green/50 transition-all duration-300 uppercase tracking-widest text-xs"
           >
-            WhatsApp
+            Request Consultation
           </a>
           <a 
             href="#quote"
-            className="px-6 py-2.5 rounded-full text-sm font-black bg-neon-green text-black shadow-[0_0_20px_rgba(204,255,0,0.3)] hover:shadow-[0_0_30px_rgba(204,255,0,0.5)] hover:scale-105 transition-all duration-300"
+            className="px-6 py-2.5 rounded-full text-xs uppercase tracking-widest font-black bg-neon-green text-black shadow-[0_0_20px_rgba(204,255,0,0.3)] hover:shadow-[0_0_30px_rgba(204,255,0,0.5)] hover:scale-105 transition-all duration-300"
           >
-            Apply Now
+            Submit Footage
           </a>
         </div>
 
@@ -1001,17 +1050,17 @@ const Navbar = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
               <a 
                 href="#quote"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="w-full py-5 rounded-2xl bg-neon-green text-black font-black text-center text-lg shadow-[0_0_30px_rgba(204,255,0,0.4)]"
+                className="w-full py-5 rounded-2xl bg-neon-green text-black font-black text-center text-sm shadow-[0_0_30px_rgba(204,255,0,0.4)] uppercase tracking-widest"
               >
-                Get Custom Quote
+                Submit Footage For Evaluation
               </a>
               <a 
                 href="https://wa.me/447480675324"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-5 rounded-2xl bg-white/5 border border-white/10 text-white font-bold text-center text-lg"
+                className="w-full py-5 rounded-2xl bg-white/5 border border-white/10 text-white font-bold text-center text-sm uppercase tracking-widest"
               >
-                Chat on WhatsApp
+                Request Direct Consultation
               </a>
             </div>
           </motion.div>
@@ -1077,7 +1126,7 @@ const Footer = () => {
               className="inline-flex items-center gap-3 px-8 py-4 bg-neon-green text-black font-black rounded-xl hover:scale-105 transition-all shadow-[0_0_30px_rgba(204,255,0,0.3)] hover:shadow-[0_0_50px_rgba(204,255,0,0.5)]"
             >
               <MessageCircle className="w-5 h-5 fill-current" />
-              <span>Chat on WhatsApp</span>
+              <span className="uppercase tracking-widest text-xs">Request Consultation</span>
             </a>
           </div>
         </div>
@@ -1124,38 +1173,37 @@ export default function App() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-[1px] bg-neon-green" />
-              <span className="text-neon-green text-xs font-bold tracking-[0.2em] uppercase">
-                Football Recruitment Strategy Agency
+              <div className="w-8 h-[1px] bg-red-500" />
+              <span className="text-red-500 text-xs font-bold tracking-[0.2em] uppercase">
+                Stop Being Ignored By Scouts
               </span>
             </div>
             
             <h1 className="font-display text-4xl lg:text-7xl font-bold leading-[0.9] tracking-tighter mb-8 text-white">
-              We Don't Edit Videos.<br />
-              We Prepare <span className="text-neon-green italic">Athletes</span><br />
-              for Pro Trials.
+              Talent Doesn't<br />Get You Signed.<br />
+              <span className="text-neon-green italic">Presentation Does.</span>
             </h1>
             
             <p className="text-xl lg:text-2xl text-white/50 leading-relaxed mb-12 max-w-xl">
-              Stop sending raw footage that scouts ignore. We strategically engineer your match highlights into recruitment assets that command professional attention.
+              Most elite players stay invisible because their highlight reels look like social media posts. We engineer tactical recruitment assets that force pro clubs to pay attention.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-6 mb-16">
               <a 
                 href="#quote"
-                className="w-full sm:w-auto px-12 py-6 bg-neon-green text-black font-black rounded-2xl hover:scale-[1.03] transition-all flex items-center justify-center gap-3 group relative overflow-hidden shadow-[0_0_40px_rgba(204,255,0,0.4)] hover:shadow-[0_0_60px_rgba(204,255,0,0.6)]"
+                className="w-full sm:w-auto px-8 py-5 bg-neon-green text-black font-black rounded-xl hover:scale-[1.03] transition-all flex items-center justify-center gap-3 group relative overflow-hidden shadow-[0_0_30px_rgba(204,255,0,0.4)] hover:shadow-[0_0_50px_rgba(204,255,0,0.6)]"
               >
-                <span className="relative z-10 text-lg">Apply for Evaluation</span>
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform relative z-10" />
+                <span className="relative z-10 text-base uppercase tracking-widest text-center">Submit Footage<br/>For Evaluation</span>
+                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform relative z-10 hidden sm:block" />
               </a>
               <button 
                 onClick={() => setIsModalOpen(true)}
-                className="w-full sm:w-auto px-12 py-6 bg-white/[0.03] hover:bg-white/[0.08] text-white font-bold rounded-2xl transition-all flex items-center justify-center gap-3 border border-white/10 group"
+                className="w-full sm:w-auto px-8 py-5 bg-white/[0.03] hover:bg-white/[0.08] text-white font-bold rounded-xl transition-all flex items-center justify-center gap-3 border border-white/10 group"
               >
                 <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-neon-green/10 group-hover:text-neon-green transition-colors">
                   <Play className="w-4 h-4 fill-current ml-1" />
                 </div>
-                <span className="text-lg">View Scouter Samples</span>
+                <span className="text-base uppercase tracking-widest text-center">View Engineered<br/>Profiles</span>
               </button>
             </div>
 
@@ -1253,9 +1301,9 @@ export default function App() {
       <div className="lg:hidden fixed bottom-0 left-0 right-0 p-4 bg-matte-black/90 backdrop-blur-2xl border-t border-white/10 z-50">
         <a 
           href="#quote"
-          className="w-full py-5 bg-neon-green text-black font-black rounded-xl shadow-[0_0_30px_rgba(204,255,0,0.5)] active:scale-95 transition-transform flex items-center justify-center"
+          className="w-full py-5 bg-neon-green text-black font-black rounded-xl shadow-[0_0_30px_rgba(204,255,0,0.5)] active:scale-95 transition-transform flex items-center justify-center uppercase tracking-widest text-sm"
         >
-          APPLY FOR A PROFILE
+          SUBMIT FOR EVALUATION
         </a>
       </div>
 
@@ -1268,6 +1316,9 @@ export default function App() {
 
       {/* Testimonial Section */}
       <TestimonialSection />
+
+      {/* Coaches Section */}
+      <CoachesSection />
 
       {/* Transformation Section */}
       <TransformationSection />
