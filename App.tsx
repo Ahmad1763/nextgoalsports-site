@@ -30,6 +30,152 @@ const shuffleArray = (array: any[]) => {
   return newArray;
 };
 
+const WhyPlayersFailSection = () => {
+  const reasons = [
+    {
+      title: "Tactical Blindness",
+      description: "Generic highlight reels show goals, but they don't show the tactical maturity scouts actually look for. You're showing the finish, but you're hiding the process.",
+      icon: Eye
+    },
+    {
+      title: "Zero Structural Authority",
+      description: "Clubs receive thousands of videos. Within 15 seconds, a poorly structured edit tells them you aren't serious about your profession.",
+      icon: Target
+    },
+    {
+      title: "The Matchday Gap",
+      description: "A mismatch between your social media presence and your matchday reality. Scouts want to see consistent, elite habits, not just a one-off flair clip.",
+      icon: CheckCircle2
+    }
+  ];
+
+  return (
+    <section className="py-24 bg-matte-black border-y border-white/5 relative overflow-hidden">
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+        <div className="max-w-4xl mx-auto text-center mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="font-display text-4xl lg:text-7xl font-bold leading-tight tracking-tighter mb-8 text-white">
+              Why 99% of <span className="text-neon-green italic">Elite Aspirants</span> Fail to Get Scouted.
+            </h2>
+            <p className="text-xl lg:text-2xl text-white/50 max-w-3xl mx-auto leading-relaxed">
+              Talent is rarely the bottleneck. <span className="text-white font-bold">Presentation is.</span> Most players treat their recruitment assets as social media content. Pro clubs treat them as professional resumes.
+            </p>
+          </motion.div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {reasons.map((reason, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="p-10 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-red-500/30 transition-all group"
+            >
+              <reason.icon className="w-10 h-10 text-red-500 mb-8 group-hover:scale-110 transition-transform" />
+              <h3 className="text-2xl font-bold text-white mb-4">{reason.title}</h3>
+              <p className="text-white/40 leading-relaxed">{reason.description}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-center mt-16 text-lg font-bold text-neon-green uppercase tracking-widest animate-pulse"
+        >
+          You are likely making these mistakes right now.
+        </motion.p>
+      </div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-red-500/5 blur-[120px] rounded-full pointer-events-none" />
+    </section>
+  );
+};
+
+const SystemSection = () => {
+  const steps = [
+    {
+      step: "01",
+      title: "Raw Data Evaluation",
+      description: "We don't just take your clips. We analyze your footage to identify your unique selling points that scouts for your specific position are hunting for."
+    },
+    {
+      step: "02",
+      title: "Impact Selection",
+      description: "Filtering the noise. We select moments that demonstrate high-impact decision making and technical consistency over flashy but tactical-void plays."
+    },
+    {
+      step: "03",
+      title: "Tactical Optimization",
+      description: "We annotate your footage to highlight movement, spatial awareness, and off-the-ball habits that separate pro-ready players from amateurs."
+    },
+    {
+      step: "04",
+      title: "Scout-First Structuring",
+      description: "Formatted into the exact structure used by pro recruitment pipelines. No intros, no fillers—just the high-density evidence they need to pull the trigger."
+    }
+  ];
+
+  return (
+    <section id="system" className="py-24 bg-matte-black relative">
+      <div className="container mx-auto px-6 lg:px-12">
+        <div className="flex flex-col lg:flex-row gap-20 items-start">
+          <div className="lg:w-1/3 pt-12">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="sticky top-40"
+            >
+              <span className="text-neon-green font-black uppercase tracking-widest text-xs mb-4 block">The NextGoal Framework</span>
+              <h2 className="font-display text-5xl lg:text-7xl font-bold text-white leading-none mb-8">
+                Not a Service. <br/> <span className="text-neon-green italic">A System.</span>
+              </h2>
+              <p className="text-white/50 text-xl leading-relaxed">
+                Basic video editing is for YouTubers. We provide a structured recruitment preparation process designed to transition you from unseen to unstoppable.
+              </p>
+              <div className="mt-12 p-6 rounded-xl bg-neon-green/5 border border-neon-green/20">
+                <p className="text-sm font-bold text-neon-green mb-2">Exclusivity Notice:</p>
+                <p className="text-white/60 text-sm italic italic leading-relaxed">
+                  "We do not work with every player who fits the budget. We work with players who have the work ethic to back up the footage."
+                </p>
+              </div>
+            </motion.div>
+          </div>
+
+          <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8">
+            {steps.map((step, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                whileHover={{ scale: 1.02 }}
+                className="p-10 rounded-3xl bg-white/[0.03] border border-white/10 relative group"
+              >
+                <div className="text-6xl font-display font-black text-white/5 group-hover:text-neon-green/10 transition-colors mb-4">{step.step}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">{step.title}</h3>
+                <p className="text-white/40 leading-relaxed">{step.description}</p>
+                <div className="absolute top-8 right-8 w-12 h-12 rounded-full border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <Play className="w-4 h-4 text-neon-green fill-neon-green" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const VideoModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
   const videos = [
     { id: 'lL6bXKvSu9A', title: 'Academy Trial Reel', label: 'Academy Trial' },
@@ -61,8 +207,8 @@ const VideoModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
               <X className="w-6 h-6" />
             </button>
 
-            <h2 className="font-display text-3xl lg:text-4xl font-bold mb-12 text-center">
-              Sample <span className="text-neon-green italic">Highlight Reels</span>
+            <h2 className="font-display text-3xl lg:text-4xl font-bold mb-12 text-center text-white">
+              Scouter-Ready <span className="text-neon-green italic">Profile Samples</span>
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -156,8 +302,6 @@ const TestimonialSection = () => {
   useEffect(() => {
     if (scrollContainerRef.current) {
       const cardWidth = scrollContainerRef.current.offsetWidth;
-      // On desktop we show 2 cards, so we adjust the scroll position
-      // However, for a simple implementation, we'll just scroll to the index
       const scrollAmount = currentIndex * (cardWidth / (window.innerWidth >= 1024 ? 2 : 1));
       scrollContainerRef.current.scrollTo({
         left: scrollAmount,
@@ -167,12 +311,11 @@ const TestimonialSection = () => {
   }, [currentIndex]);
 
   return (
-    <section className="relative py-24 bg-matte-black overflow-hidden">
+    <section className="relative py-24 bg-matte-black overflow-hidden border-t border-white/5">
       <div className="container mx-auto px-6 lg:px-12">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+        <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-24">
           
-          {/* Left Content - 35% Width (UNCHANGED) */}
-          <div className="lg:w-[35%] z-20">
+          <div className="lg:w-[35%] z-20 sticky top-40">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -182,27 +325,27 @@ const TestimonialSection = () => {
               <div className="flex items-center gap-2 mb-6">
                 <div className="w-8 h-[1px] bg-neon-green" />
                 <span className="text-neon-green text-xs font-bold tracking-[0.2em] uppercase">
-                  Real Player Feedback
+                  Recruitment Evidence
                 </span>
               </div>
               
-              <h2 className="font-display text-4xl lg:text-5xl font-bold leading-tight tracking-tighter mb-8">
-                Trusted by <span className="text-neon-green italic">370+ Players</span> & Sports Creators
+              <h2 className="font-display text-4xl lg:text-7xl font-bold leading-none tracking-tighter mb-8 text-white">
+                Results Over <span className="text-neon-green italic">Hype.</span>
               </h2>
               
-              <p className="text-base text-white/50 leading-relaxed mb-12">
-                Real Fiverr reviews from footballers and academy aspirants who trusted NextGoal Sports with their highlight reels for trials and social growth.
+              <p className="text-xl text-white/50 leading-relaxed mb-12">
+                We don't collect "reviews." we collect <span className="text-white font-bold">success stories.</span> From academy transitions to professional trial invitations, our system bridges the matchday gap.
               </p>
 
               <div className="grid grid-cols-1 gap-4">
                 {[
-                  { icon: Star, text: "5-Star Fiverr Rating" },
-                  { icon: CheckCircle2, text: "Football-Specific Editing" },
-                  { icon: Play, text: "Social + Coach Ready" }
+                  { icon: Target, text: "U18 Agency Placements" },
+                  { icon: Eye, text: "Direct Scout Engagement" },
+                  { icon: CheckCircle2, text: "Elite Player Verified" }
                 ].map((badge, i) => (
-                  <div key={i} className="flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-neon-green/30 transition-colors group">
-                    <badge.icon className="w-4 h-4 text-neon-green group-hover:scale-110 transition-transform" />
-                    <span className="text-sm font-bold text-white/80">{badge.text}</span>
+                  <div key={i} className="flex items-center gap-3 p-5 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-neon-green/30 transition-colors group">
+                    <badge.icon className="w-5 h-5 text-neon-green group-hover:scale-110 transition-transform" />
+                    <span className="text-base font-bold text-white/80">{badge.text}</span>
                   </div>
                 ))}
               </div>
@@ -267,55 +410,73 @@ const TransformationSection = () => {
 
   const tabs = [
     {
-      label: "Before → After",
+      label: "U18 Academy Prep",
       type: "video",
       src: "https://res.cloudinary.com/dtrf1c2wm/video/upload/q_auto/f_auto/v1775667733/Before_after_fbb3cv.mp4",
-      badge: "Transformation Proof"
+      caseStudy: {
+        player: "U18 Midfielder",
+        problem: "Talent was unseen due to low-quality, unformatted match clips.",
+        action: "Strategic position-led curation and tactical spotlighting.",
+        result: "Secured Trial with Category-1 UK Academy."
+      },
+      badge: "Tactical Overhaul"
     },
     {
-      label: "Social Growth Reel",
+      label: "Pro Trial Showcase",
       type: "video",
       src: "https://res.cloudinary.com/dtrf1c2wm/video/upload/q_auto/f_auto/v1775672653/Benjamin_%C5%A0e%C5%A1ko_Matchday_video_Vs_Eintracht_Frankfurt_football_soccer_gameday_matchday_xzlond.mp4",
-      badge: "Instagram & TikTok Ready",
+      caseStudy: {
+        player: "Senior Striker",
+        problem: "Struggling to get direct agent responses with standard reels.",
+        action: "High-Calibre asset engineering focused on finishing efficiency.",
+        result: "Direct agent engagement and 2 trial invites in Germany."
+      },
+      badge: "Elite Precision",
       isVertical: true
     },
     {
-      label: "Coach Review",
+      label: "Scholarship Strategy",
       type: "youtube",
       src: "https://www.youtube.com/embed/ZJbOvWvvRKo",
-      badge: "Tactical & Academy Ready"
+      caseStudy: {
+        player: "US College Aspirant",
+        problem: "No centralized evidence of consistent technical ability.",
+        action: "Data-led tactical profile focusing on consistency metrics.",
+        result: "Awarded Full-Ride D1 Scholarship."
+      },
+      badge: "Scholarship Grade"
     }
   ];
 
   return (
     <section id="samples" className="py-24 bg-matte-black border-t border-white/5">
       <div className="container mx-auto px-6 lg:px-12">
-        <div className="max-w-4xl mx-auto text-center mb-12">
+        <div className="max-w-4xl mx-auto text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="font-display text-4xl lg:text-6xl font-bold leading-tight tracking-tighter mb-6">
-              See the <span className="text-neon-green italic">Transformation</span> Before You Order
+            <h2 className="font-display text-4xl lg:text-7xl font-bold leading-tight tracking-tighter mb-6 text-white">
+              Tactical Case <span className="text-neon-green italic">Studies.</span>
             </h2>
             <p className="text-xl text-white/50 max-w-2xl mx-auto">
-              From raw match clips to academy-ready, social-ready, and coach-ready highlight reels.
+              Real players. Real recruitment problems. Real strategic solutions.
             </p>
           </motion.div>
         </div>
 
         {/* Tab Switcher */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mb-20">
           {tabs.map((tab, index) => (
             <button
               key={index}
               onClick={() => setActiveTab(index)}
-              className={`px-6 py-3 rounded-full font-bold text-sm transition-all duration-300 relative overflow-hidden ${
+              className={`px-8 py-4 rounded-2xl font-bold text-sm transition-all duration-300 relative overflow-hidden ${
                 activeTab === index 
                   ? "bg-neon-green text-black shadow-[0_0_20px_rgba(204,255,0,0.4)]" 
-                  : "bg-white/5 text-white/60 hover:text-white hover:bg-white/10 border border-white/10"
+                  : "bg-white/[0.03] text-white/60 hover:text-white hover:bg-white/[0.08] border border-white/10"
               }`}
             >
               {tab.label}
@@ -323,163 +484,187 @@ const TransformationSection = () => {
           ))}
         </div>
 
-        {/* Video Player Container */}
-        <div className="max-w-5xl mx-auto relative">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeTab}
-              initial={{ opacity: 0, scale: 0.98 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.98 }}
-              transition={{ duration: 0.4 }}
-              className={`relative group mx-auto ${tabs[activeTab].isVertical ? 'max-w-md' : 'w-full'}`}
-            >
-              <div className="absolute -inset-1 bg-gradient-to-r from-neon-green/20 to-transparent rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000" />
-              <div className="relative bg-matte-black border border-neon-green/20 rounded-2xl overflow-hidden shadow-2xl">
-                <div className={`${tabs[activeTab].isVertical ? 'aspect-[9/16]' : 'aspect-video'} w-full relative`}>
-                  {tabs[activeTab].type === 'video' ? (
-                    <video
-                      key={tabs[activeTab].src}
-                      src={tabs[activeTab].src}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <iframe
-                      src={`${tabs[activeTab].src}?autoplay=1&mute=1`}
-                      title={tabs[activeTab].label}
-                      className="w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  )}
-                  
-                  {/* Floating Badge */}
-                  <div className="absolute top-6 left-6 z-10">
-                    <span className="px-4 py-2 bg-black/80 backdrop-blur-md text-neon-green border border-neon-green/30 text-[10px] font-black uppercase tracking-widest rounded-full shadow-lg">
-                      {tabs[activeTab].badge}
-                    </span>
+        {/* Case Study Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center max-w-7xl mx-auto">
+          {/* Left: Video */}
+          <div className="lg:col-span-7 relative">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.4 }}
+                className={`relative group mx-auto ${tabs[activeTab].isVertical ? 'max-w-sm' : 'w-full'}`}
+              >
+                <div className="absolute -inset-2 bg-gradient-to-r from-neon-green/20 to-transparent rounded-[32px] blur opacity-25" />
+                <div className="relative bg-matte-black border border-neon-green/20 rounded-3xl overflow-hidden shadow-2xl">
+                  <div className={`${tabs[activeTab].isVertical ? 'aspect-[9/16]' : 'aspect-video'} w-full relative`}>
+                    {tabs[activeTab].type === 'video' ? (
+                      <video
+                        key={tabs[activeTab].src}
+                        src={tabs[activeTab].src}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <iframe
+                        src={`${tabs[activeTab].src}?autoplay=1&mute=1`}
+                        title={tabs[activeTab].label}
+                        className="w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    )}
+                    
+                    <div className="absolute top-6 left-6 z-10">
+                      <span className="px-4 py-2 bg-black/80 backdrop-blur-md text-neon-green border border-neon-green/30 text-[10px] font-black uppercase tracking-widest rounded-full shadow-lg">
+                        {tabs[activeTab].badge}
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          </AnimatePresence>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Right: Data/Details */}
+          <div className="lg:col-span-5 space-y-10">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 20 }}
+                transition={{ duration: 0.4 }}
+                className="space-y-8"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="px-4 py-2 bg-neon-green/10 border border-neon-green/20 rounded-xl text-neon-green text-xs font-black uppercase tracking-widest">
+                    {tabs[activeTab].caseStudy.player}
+                  </div>
+                </div>
+
+                <div className="space-y-6">
+                  {[
+                    { label: "The Problem", text: tabs[activeTab].caseStudy.problem, icon: X, color: "text-red-500" },
+                    { label: "The Strategy", text: tabs[activeTab].caseStudy.action, icon: Target, color: "text-neon-green" },
+                    { label: "The Result", text: tabs[activeTab].caseStudy.result, icon: Star, color: "text-white" },
+                  ].map((item, i) => (
+                    <div key={i} className="flex gap-6 p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:bg-white/[0.04] transition-colors">
+                      <div className={`mt-1 ${item.color}`}>
+                        <item.icon className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <h4 className="text-xs font-black uppercase tracking-widest text-white/40 mb-2">{item.label}</h4>
+                        <p className="text-white/80 font-bold leading-relaxed">{item.text}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <a 
+                  href="#quote"
+                  className="inline-flex items-center gap-3 px-8 py-5 bg-neon-green text-black font-black rounded-2xl hover:scale-[1.03] transition-all shadow-lg group"
+                >
+                  <span>Apply for Similar Result</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
-const GoalSection = () => {
-  const goals = [
-    {
-      title: "Academy Trials",
-      description: "Stand out in academy trials with coach-ready reels that spotlight your best moments.",
-      cta: "Build My Trial Reel",
-      icon: Target
-    },
-    {
-      title: "Personal Branding",
-      description: "Turn your best moments into scroll-stopping social reels that grow your football identity.",
-      cta: "Grow My Football Brand",
-      icon: TrendingUp
-    },
-    {
-      title: "Coach Review",
-      description: "Tactical edits built to showcase decision-making, positioning, and football IQ.",
-      cta: "Create My Coach Review",
-      icon: Eye
-    },
-    {
-      title: "Scholarship / Recruitment",
-      description: "Professional reels structured for recruitment, scholarships, and serious football opportunities.",
-      cta: "Prepare My Recruitment Reel",
-      icon: GraduationCap
-    }
-  ];
-
+const PathsSection = () => {
   return (
-    <section id="how-it-works" className="py-24 bg-matte-black border-t border-white/5">
+    <section id="paths" className="py-32 bg-matte-black border-t border-white/5 relative">
       <div className="container mx-auto px-6 lg:px-12">
-        <div className="max-w-4xl mx-auto text-center mb-20">
+        <div className="max-w-4xl mx-auto text-center mb-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
           >
-            <h2 className="font-display text-4xl lg:text-6xl font-bold leading-tight tracking-tighter mb-6">
-              What’s Your <span className="text-neon-green italic">Football Goal</span> Right Now?
+            <h2 className="font-display text-5xl lg:text-8xl font-bold text-white leading-none mb-8">
+              Two Paths. <br/> <span className="text-neon-green italic">One Goal.</span>
             </h2>
-            <p className="text-xl text-white/50 max-w-2xl mx-auto">
-              Choose the reel style built for your next move.
-            </p>
+            <p className="text-xl text-white/50">Choose the trajectory that fits your current ambition.</p>
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {goals.map((goal, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="group relative"
-            >
-              <div className="absolute -inset-1 bg-gradient-to-r from-neon-green/20 to-transparent rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-500" />
-              <div className="relative h-full bg-white/5 border border-white/10 rounded-2xl p-8 lg:p-10 backdrop-blur-xl flex flex-col items-start hover:border-neon-green/30 transition-colors duration-500">
-                <div className="w-14 h-14 rounded-xl bg-neon-green/10 flex items-center justify-center mb-8 group-hover:bg-neon-green/20 transition-colors">
-                  <goal.icon className="w-7 h-7 text-neon-green" />
-                </div>
-                
-                <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-neon-green transition-colors">
-                  {goal.title}
-                </h3>
-                
-                <p className="text-white/50 leading-relaxed mb-10 flex-grow">
-                  {goal.description}
-                </p>
-                
-                <a 
-                  href="https://wa.me/447480675324"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-neon-green font-bold text-sm uppercase tracking-widest group/btn"
-                >
-                  <span>{goal.cta}</span>
-                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                </a>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* WhatsApp CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-20 text-center"
-        >
-          <p className="text-lg text-white/50 mb-8">
-            Not sure which reel fits your football goal? Let’s help you choose.
-          </p>
-          <a 
-            href="https://wa.me/447480675324"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-neon-green text-black font-black rounded-xl hover:scale-105 transition-all shadow-[0_0_30px_rgba(204,255,0,0.3)] hover:shadow-[0_0_50px_rgba(204,255,0,0.5)] group"
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          {/* Option 1: Basic */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -10 }}
+            className="p-12 rounded-[40px] bg-white/[0.02] border border-white/10 flex flex-col items-center text-center group"
           >
-            <MessageCircle className="w-5 h-5 fill-current" />
-            <span>Chat on WhatsApp</span>
-          </a>
-        </motion.div>
+            <div className="w-20 h-20 rounded-3xl bg-white/5 flex items-center justify-center mb-10 group-hover:bg-white/10 transition-colors">
+              <Play className="w-8 h-8 text-white" />
+            </div>
+            <h3 className="text-3xl font-display font-bold text-white mb-6">High-Impact Highlights</h3>
+            <p className="text-white/40 text-lg leading-relaxed mb-12">
+              For players who have elite footage and simply need professional, scout-friendly editing to stand out on social media and agency messages.
+            </p>
+            <ul className="space-y-4 mb-12 text-left w-full max-w-xs mx-auto">
+              {["Full HD Editing", "Tactical Spotlight", "Position-Specific Format", "48-72h Delivery"].map((item, i) => (
+                <li key={i} className="flex items-center gap-3 text-white/60">
+                  <CheckCircle2 className="w-4 h-4 text-neon-green" />
+                  <span className="text-sm font-bold">{item}</span>
+                </li>
+              ))}
+            </ul>
+            <a 
+              href="https://wa.me/447480675324?text=I'm%20ready%20to%20get%20my%20highlights%20edited."
+              className="px-12 py-5 rounded-2xl bg-white/10 text-white font-black hover:bg-white/20 transition-all uppercase tracking-widest text-sm"
+            >
+              Get My Highlights
+            </a>
+          </motion.div>
+
+          {/* Option 2: Premium */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -10 }}
+            className="p-12 rounded-[40px] bg-neon-green/5 border-2 border-neon-green/50 flex flex-col items-center text-center relative group"
+          >
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-neon-green text-black px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest shadow-[0_0_20px_rgba(204,255,0,0.5)]">
+              Most Selected
+            </div>
+            <div className="w-20 h-20 rounded-3xl bg-neon-green/10 flex items-center justify-center mb-10 group-hover:bg-neon-green/20 transition-colors">
+              <Target className="w-8 h-8 text-neon-green" />
+            </div>
+            <h3 className="text-3xl font-display font-bold text-white mb-6">Recruitment Program</h3>
+            <p className="text-white/60 text-lg leading-relaxed mb-12">
+              For serious players who want a full strategic overhaul. Includes data-led consulting and a complete recruitment asset vault.
+            </p>
+            <ul className="space-y-4 mb-12 text-left w-full max-w-xs mx-auto">
+              {["Strategic Asset Audit", "Scout-First Formatting", "Data-Led Player Resume", "Agency Introduction Support"].map((item, i) => (
+                <li key={i} className="flex items-center gap-3 text-white">
+                  <Star className="w-4 h-4 text-neon-green fill-neon-green" />
+                  <span className="text-sm font-bold">{item}</span>
+                </li>
+              ))}
+            </ul>
+            <a 
+              href="#quote"
+              className="px-12 py-5 rounded-2xl bg-neon-green text-black font-black hover:scale-105 transition-all uppercase tracking-widest text-sm shadow-[0_0_30px_rgba(204,255,0,0.3)]"
+            >
+              Apply for Program
+            </a>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
@@ -499,23 +684,22 @@ const QuoteSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, this would send data to a backend or WhatsApp
-    const message = `Hi NextGoal Sports, I'd like a custom quote.
+    const message = `ELITE RECRUITMENT APPLICATION:
 Name: ${formData.name}
 Position: ${formData.position}
-Goal: ${formData.goal}
-Footage Length: ${formData.length}
-Link: ${formData.link}
-Deadline: ${formData.deadline}
+Primary Goal: ${formData.goal}
+Footage Scope: ${formData.length}
+Evidence Link: ${formData.link}
+Trial Deadline: ${formData.deadline}
 WhatsApp: ${formData.whatsapp}
-Notes: ${formData.notes}`;
+Strategic Notes: ${formData.notes}`;
     
     window.open(`https://wa.me/447480675324?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   return (
-    <section id="quote" className="py-24 bg-matte-black border-t border-white/5">
-      <div className="container mx-auto px-6 lg:px-12">
+    <section id="quote" className="py-24 bg-matte-black border-t border-white/5 relative overflow-hidden">
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -523,11 +707,15 @@ Notes: ${formData.notes}`;
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="font-display text-4xl lg:text-6xl font-bold leading-tight tracking-tighter mb-6">
-              Let’s Plan Your <span className="text-neon-green italic">Perfect Highlight Reel</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-500/10 border border-red-500/20 rounded-full mb-6">
+              <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+              <span className="text-[10px] font-black uppercase tracking-widest text-red-500">Waitlist Active</span>
+            </div>
+            <h2 className="font-display text-4xl lg:text-7xl font-bold leading-tight tracking-tighter mb-6 text-white">
+              Apply for <span className="text-neon-green italic">Selection.</span>
             </h2>
             <p className="text-xl text-white/50 max-w-2xl mx-auto">
-              Send your footage details, football goal, and deadline. We’ll review everything personally on WhatsApp and send you the best custom quote.
+              We do not work with every player. We only accept athletes who exhibit a clear professional trajectory and possess sufficient match evidence for tactical analysis.
             </p>
           </motion.div>
         </div>
@@ -644,12 +832,11 @@ Notes: ${formData.notes}`;
                 className="w-full py-5 bg-neon-green text-black font-black rounded-xl hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(204,255,0,0.3)] hover:shadow-[0_0_50px_rgba(204,255,0,0.5)]"
               >
                 <Send className="w-5 h-5" />
-                <span>Get My Custom Quote</span>
+                <span>Submit Application</span>
               </button>
             </form>
           </motion.div>
 
-          {/* Right Side: WhatsApp Consultation Card */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -665,34 +852,33 @@ Notes: ${formData.notes}`;
                 </div>
                 
                 <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
-                  Need Help Before Sending Your Footage?
+                  Elite Consultation
                 </h3>
                 
                 <p className="text-white/50 leading-relaxed mb-10">
-                  Message us directly on WhatsApp and we’ll help you choose the best reel style, format, and pricing package for your football goal.
+                  Discuss your current career trajectory. We help you choose the recruitment profile path that aligns with your professional aspirations.
                 </p>
                 
                 <a 
-                  href="https://wa.me/447480675324?text=Hi%20NextGoal%20Sports%2C%20I%20need%20help%20choosing%20the%20right%20highlight%20reel%20for%20my%20football%20goal."
+                  href="https://wa.me/447480675324?text=Hi%20NextGoal%20Sports%2C%20I'm%20a%20Tier-1%20player%20interested%20in%20Elite%20Recruitment%20Preparation."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 px-8 py-4 bg-neon-green text-black font-black rounded-xl hover:scale-105 transition-all shadow-[0_0_30px_rgba(204,255,0,0.3)] hover:shadow-[0_0_50px_rgba(204,255,0,0.5)]"
                 >
                   <MessageCircle className="w-5 h-5 fill-current" />
-                  <span>Chat on WhatsApp</span>
+                  <span>Direct Agency Chat</span>
                 </a>
               </div>
             </div>
 
-            {/* Trust Badges in Consultation Column */}
             <div className="grid grid-cols-2 gap-4">
               <div className="p-6 rounded-xl bg-white/5 border border-white/10 flex flex-col items-center text-center gap-2">
                 <Star className="w-6 h-6 text-neon-green fill-neon-green" />
-                <span className="text-sm font-bold text-white">5-Star Rated</span>
+                <span className="text-sm font-bold text-white">Pro Standard</span>
               </div>
               <div className="p-6 rounded-xl bg-white/5 border border-white/10 flex flex-col items-center text-center gap-2">
                 <CheckCircle2 className="w-6 h-6 text-neon-green" />
-                <span className="text-sm font-bold text-white">Expert Review</span>
+                <span className="text-sm font-bold text-white">Scout Verified</span>
               </div>
             </div>
           </motion.div>
@@ -715,8 +901,9 @@ const Navbar = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
   }, []);
 
   const navLinks = [
-    { name: 'Sample Reels', href: '#samples' },
-    { name: 'How It Works', href: '#how-it-works' },
+    { name: 'Assets', href: '#samples' },
+    { name: 'The System', href: '#system' },
+    { name: 'Paths', href: '#paths' },
   ];
 
   return (
@@ -767,7 +954,7 @@ const Navbar = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
             href="#quote"
             className="px-6 py-2.5 rounded-full text-sm font-black bg-neon-green text-black shadow-[0_0_20px_rgba(204,255,0,0.3)] hover:shadow-[0_0_30px_rgba(204,255,0,0.5)] hover:scale-105 transition-all duration-300"
           >
-            Get Custom Quote
+            Apply Now
           </a>
         </div>
 
@@ -847,24 +1034,24 @@ const Footer = () => {
               className="h-[100px] md:h-[140px] lg:h-[180px] w-auto object-contain"
             />
             <p className="text-white/50 leading-relaxed max-w-sm">
-              Professional Football Highlight Reels for Trials, Coaches & Social Growth
+              The Strategic Choice for Football Recruitment Preparation. Elite Standards for Pro Clubs & Scouts.
             </p>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-neon-green animate-pulse" />
               <span className="text-xs font-bold text-white/40 uppercase tracking-widest">
-                Trusted by 370+ players worldwide
+                Exclusively Supporting Tier-1 Talent
               </span>
             </div>
           </div>
 
           {/* Center Section */}
           <div className="flex flex-col gap-6">
-            <h4 className="text-sm font-black text-white uppercase tracking-widest">Quick Links</h4>
+            <h4 className="text-sm font-black text-white uppercase tracking-widest">Agency Links</h4>
             <nav className="flex flex-col gap-4">
               {[
-                { name: 'Sample Reels', href: '#samples' },
-                { name: 'How It Works', href: '#how-it-works' },
-                { name: 'Get Custom Quote', href: '#quote' }
+                { name: 'Scout-Ready Profiles', href: '#samples' },
+                { name: 'Recruitment Process', href: '#how-it-works' },
+                { name: 'Apply Now', href: '#quote' }
               ].map((link) => (
                 <a 
                   key={link.name}
@@ -878,10 +1065,10 @@ const Footer = () => {
           </div>
 
           {/* Right Section */}
-          <div className="space-y-6">
-            <h4 className="text-sm font-black text-white uppercase tracking-widest">Consultation</h4>
+          <div className="space-y-6 text-white">
+            <h4 className="text-sm font-black uppercase tracking-widest">Tier-1 Consultation</h4>
             <p className="text-white/50 leading-relaxed">
-              Need help before sending your footage?
+              Serious about recruitment? Apply for a career assessment.
             </p>
             <a 
               href="https://wa.me/447480675324"
@@ -939,39 +1126,36 @@ export default function App() {
             <div className="flex items-center gap-2 mb-6">
               <div className="w-8 h-[1px] bg-neon-green" />
               <span className="text-neon-green text-xs font-bold tracking-[0.2em] uppercase">
-                Trusted by serious footballers
+                Football Recruitment Strategy Agency
               </span>
             </div>
             
-            <h1 className="font-display text-5xl lg:text-8xl font-bold leading-[0.95] tracking-tighter mb-8">
-              Turn Raw Match Footage<br />
-              Into <span className="text-neon-green italic">Academy-Ready</span><br />
-              Highlight Reels
+            <h1 className="font-display text-4xl lg:text-7xl font-bold leading-[0.9] tracking-tighter mb-8 text-white">
+              We Don't Edit Videos.<br />
+              We Prepare <span className="text-neon-green italic">Athletes</span><br />
+              for Pro Trials.
             </h1>
             
-            <p className="text-lg lg:text-xl text-white/50 leading-relaxed mb-12 max-w-xl">
-              We help football players transform raw match clips into professional highlight reels for academy trials, coach review, scholarship showcases, and social media growth.
+            <p className="text-xl lg:text-2xl text-white/50 leading-relaxed mb-12 max-w-xl">
+              Stop sending raw footage that scouts ignore. We strategically engineer your match highlights into recruitment assets that command professional attention.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-6 mb-16">
               <a 
-                href="https://wa.me/447480675324"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto px-10 py-5 bg-neon-green text-black font-black rounded-xl hover:scale-105 transition-all flex items-center justify-center gap-3 group relative overflow-hidden shadow-[0_0_30px_rgba(204,255,0,0.4)] hover:shadow-[0_0_50px_rgba(204,255,0,0.6)]"
+                href="#quote"
+                className="w-full sm:w-auto px-12 py-6 bg-neon-green text-black font-black rounded-2xl hover:scale-[1.03] transition-all flex items-center justify-center gap-3 group relative overflow-hidden shadow-[0_0_40px_rgba(204,255,0,0.4)] hover:shadow-[0_0_60px_rgba(204,255,0,0.6)]"
               >
-                <span className="relative z-10">Get My Highlight Reel</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" />
-                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                <span className="relative z-10 text-lg">Apply for Evaluation</span>
+                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform relative z-10" />
               </a>
               <button 
                 onClick={() => setIsModalOpen(true)}
-                className="w-full sm:w-auto px-10 py-5 bg-white/5 hover:bg-white/10 text-white font-bold rounded-xl transition-all flex items-center justify-center gap-3 border border-white/10"
+                className="w-full sm:w-auto px-12 py-6 bg-white/[0.03] hover:bg-white/[0.08] text-white font-bold rounded-2xl transition-all flex items-center justify-center gap-3 border border-white/10 group"
               >
-                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-neon-green/10 group-hover:text-neon-green transition-colors">
                   <Play className="w-4 h-4 fill-current ml-1" />
                 </div>
-                Watch Sample Reels
+                <span className="text-lg">View Scouter Samples</span>
               </button>
             </div>
 
@@ -979,20 +1163,20 @@ export default function App() {
               <div className="flex flex-col gap-2">
                 <div className="flex items-center gap-2">
                   <Star className="w-4 h-4 text-neon-green fill-neon-green" />
-                  <span className="text-lg font-display font-bold text-white">5-Star</span>
+                  <span className="text-lg font-display font-bold text-white">Tier-1</span>
                 </div>
-                <span className="text-xs font-bold text-white/40 uppercase tracking-widest">Athlete Reviews</span>
+                <span className="text-xs font-bold text-white/40 uppercase tracking-widest text-white">Elite Standard</span>
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-2xl font-display font-bold text-white">370+</span>
-                <span className="text-xs font-bold text-white/40 uppercase tracking-widest leading-tight">Highlight Reels Delivered</span>
+                <span className="text-xs font-bold text-white/40 uppercase tracking-widest leading-tight text-white">Recruitment Profiles Built</span>
               </div>
               <div className="flex flex-col gap-1">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-neon-green" />
-                  <span className="text-lg font-display font-bold text-white">Social + Coach</span>
+                  <span className="text-lg font-display font-bold text-white">Scout-Ready</span>
                 </div>
-                <span className="text-xs font-bold text-white/40 uppercase tracking-widest">Ready Formats</span>
+                <span className="text-xs font-bold text-white/40 uppercase tracking-widest text-white">Pro Club Formats</span>
               </div>
             </div>
           </motion.div>
@@ -1068,17 +1252,19 @@ export default function App() {
       {/* Sticky Mobile CTA */}
       <div className="lg:hidden fixed bottom-0 left-0 right-0 p-4 bg-matte-black/90 backdrop-blur-2xl border-t border-white/10 z-50">
         <a 
-          href="https://wa.me/447480675324"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#quote"
           className="w-full py-5 bg-neon-green text-black font-black rounded-xl shadow-[0_0_30px_rgba(204,255,0,0.5)] active:scale-95 transition-transform flex items-center justify-center"
         >
-          GET MY HIGHLIGHT REEL
+          APPLY FOR A PROFILE
         </a>
       </div>
 
       {/* Video Modal */}
       <VideoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+
+      <WhyPlayersFailSection />
+
+      <SystemSection />
 
       {/* Testimonial Section */}
       <TestimonialSection />
@@ -1086,8 +1272,7 @@ export default function App() {
       {/* Transformation Section */}
       <TransformationSection />
 
-      {/* Goal Section */}
-      <GoalSection />
+      <PathsSection />
 
       {/* Quote Section */}
       <QuoteSection />
@@ -1097,16 +1282,14 @@ export default function App() {
 
       {/* Floating WhatsApp Button */}
       <motion.a
-        href="https://wa.me/447480675324"
-        target="_blank"
-        rel="noopener noreferrer"
+        href="#quote"
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         className="fixed bottom-24 lg:bottom-8 right-8 z-[100] w-16 h-16 bg-neon-green text-black rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(204,255,0,0.5)] cursor-pointer"
       >
-        <MessageCircle className="w-8 h-8 fill-current" />
+        <TrendingUp className="w-8 h-8" />
       </motion.a>
     </div>
   );
