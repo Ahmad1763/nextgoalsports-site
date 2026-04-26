@@ -63,7 +63,7 @@ const WhyPlayersFailSection = () => {
               Why You Are <span className="text-red-500 italic">Invisible</span> to Pro Clubs.
             </h2>
             <p className="text-xl lg:text-2xl text-white/50 max-w-3xl mx-auto leading-relaxed">
-              Every day, inferior players get trials over you. Not because they have more talent, but because they understand the mechanics of recruitment. If you present like an amateur, your emails will be deleted.
+              If your highlights look like Instagram, you're getting ignored. Every day, inferior players get trials over you because they understand the mechanics of recruitment. Present like an amateur, and you will stay invisible.
             </p>
           </motion.div>
         </div>
@@ -139,7 +139,7 @@ const SystemSection = () => {
                 We Engineer <br/> <span className="text-neon-green italic">Assets.</span>
               </h2>
               <p className="text-white/50 text-xl leading-relaxed">
-                We do not "edit videos." We strip your footage down to its core tactical value and rebuild it into a high-density recruitment profile designed strictly for decision-makers.
+                We do not "edit videos." We rebuild player footage into structured recruitment material that exposes decision-making, highlights positional intelligence, and is optimized for 30-60 second scout evaluation.
               </p>
               <div className="mt-12 p-6 rounded-xl bg-neon-green/5 border border-neon-green/20">
                 <p className="text-sm font-bold text-neon-green mb-2">Exclusivity Notice:</p>
@@ -245,165 +245,7 @@ const VideoModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
   );
 };
 
-const reviewScreenshots = [
-  "https://res.cloudinary.com/dtrf1c2wm/image/upload/q_auto/f_auto/v1775646008/10_mtyhj7.png",
-  "https://res.cloudinary.com/dtrf1c2wm/image/upload/q_auto/f_auto/v1775646007/9_wj8pfh.png",
-  "https://res.cloudinary.com/dtrf1c2wm/image/upload/q_auto/f_auto/v1775646005/7_csr31b.png",
-  "https://res.cloudinary.com/dtrf1c2wm/image/upload/q_auto/f_auto/v1775646006/5_rdkhkj.png",
-  "https://res.cloudinary.com/dtrf1c2wm/image/upload/q_auto/f_auto/v1775646006/8_rehpjw.png",
-  "https://res.cloudinary.com/dtrf1c2wm/image/upload/q_auto/f_auto/v1775646005/3_kr6yim.png",
-  "https://res.cloudinary.com/dtrf1c2wm/image/upload/q_auto/f_auto/v1775646005/6_eehqhg.png",
-  "https://res.cloudinary.com/dtrf1c2wm/image/upload/q_auto/f_auto/v1775646005/4_htjdjm.png",
-  "https://res.cloudinary.com/dtrf1c2wm/image/upload/q_auto/f_auto/v1775646004/2_zi8kqb.png",
-];
 
-interface ReviewCardProps {
-  src: string;
-  index: number;
-  key?: number | string;
-}
-
-const ReviewCard = ({ src, index }: ReviewCardProps) => {
-  return (
-    <div className="flex-shrink-0 w-full lg:w-[calc(50%-12px)] snap-center">
-      <div className="relative w-full h-[120px] sm:h-[160px] lg:h-[280px] rounded-2xl overflow-hidden border border-white/10 bg-matte-black/80 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex items-center justify-center p-4 group">
-        <div className="absolute inset-0 bg-gradient-to-br from-neon-green/5 via-transparent to-transparent opacity-50" />
-        <div className="absolute inset-0 border border-neon-green/10 rounded-2xl pointer-events-none group-hover:border-neon-green/30 transition-colors duration-500" />
-        <img
-          src={src}
-          alt={`Fiverr Review ${index + 1}`}
-          className="w-full h-full object-contain relative z-10 hover:scale-[1.01] transition-transform duration-700"
-          referrerPolicy="no-referrer"
-        />
-      </div>
-    </div>
-  );
-};
-
-const TestimonialSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % reviewScreenshots.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + reviewScreenshots.length) % reviewScreenshots.length);
-  };
-
-  useEffect(() => {
-    if (isPaused) return;
-    const interval = setInterval(nextSlide, 3000);
-    return () => clearInterval(interval);
-  }, [isPaused]);
-
-  useEffect(() => {
-    if (scrollContainerRef.current) {
-      const cardWidth = scrollContainerRef.current.offsetWidth;
-      const scrollAmount = currentIndex * (cardWidth / (window.innerWidth >= 1024 ? 2 : 1));
-      scrollContainerRef.current.scrollTo({
-        left: scrollAmount,
-        behavior: 'smooth'
-      });
-    }
-  }, [currentIndex]);
-
-  return (
-    <section className="relative py-24 bg-matte-black overflow-hidden border-t border-white/5">
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-24">
-          
-          <div className="lg:w-[35%] z-20 sticky top-40">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="flex items-center gap-2 mb-6">
-                <div className="w-8 h-[1px] bg-neon-green" />
-                <span className="text-neon-green text-xs font-bold tracking-[0.2em] uppercase">
-                  Recruitment Evidence
-                </span>
-              </div>
-              
-              <h2 className="font-display text-4xl lg:text-7xl font-bold leading-none tracking-tighter mb-8 text-white">
-                Results Over <span className="text-neon-green italic">Hype.</span>
-              </h2>
-              
-              <p className="text-xl text-white/50 leading-relaxed mb-12">
-                We don't collect "reviews." we collect <span className="text-white font-bold">success stories.</span> From academy transitions to professional trial invitations, our system bridges the matchday gap.
-              </p>
-
-              <div className="grid grid-cols-1 gap-4">
-                {[
-                  { icon: Target, text: "U18 Agency Placements" },
-                  { icon: Eye, text: "Direct Scout Engagement" },
-                  { icon: CheckCircle2, text: "Elite Player Verified" }
-                ].map((badge, i) => (
-                  <div key={i} className="flex items-center gap-3 p-5 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-neon-green/30 transition-colors group">
-                    <badge.icon className="w-5 h-5 text-neon-green group-hover:scale-110 transition-transform" />
-                    <span className="text-base font-bold text-white/80">{badge.text}</span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Right Content - Carousel (65% Width) */}
-          <div className="lg:w-[65%] relative group"
-               onMouseEnter={() => setIsPaused(true)}
-               onMouseLeave={() => setIsPaused(false)}>
-            
-            <div 
-              ref={scrollContainerRef}
-              className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-8"
-              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-            >
-              {reviewScreenshots.map((src, index) => (
-                <ReviewCard key={index} src={src} index={index} />
-              ))}
-            </div>
-
-            {/* Navigation Arrows */}
-            <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 -left-6 -right-6 justify-between pointer-events-none">
-              <button 
-                onClick={prevSlide}
-                className="w-12 h-12 rounded-full bg-matte-black/80 border border-white/10 flex items-center justify-center text-white hover:border-neon-green transition-colors pointer-events-auto backdrop-blur-md"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              <button 
-                onClick={nextSlide}
-                className="w-12 h-12 rounded-full bg-matte-black/80 border border-white/10 flex items-center justify-center text-white hover:border-neon-green transition-colors pointer-events-auto backdrop-blur-md"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
-            </div>
-
-            {/* Pagination Dots */}
-            <div className="flex justify-center gap-2 mt-4">
-              {reviewScreenshots.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setCurrentIndex(i)}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
-                    currentIndex === i ? 'w-8 bg-neon-green' : 'w-2 bg-white/20'
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      {/* Background Decorative Element */}
-      <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-neon-green/5 to-transparent pointer-events-none" />
-    </section>
-  );
-};
 
 const CoachesSection = () => {
   return (
@@ -421,7 +263,7 @@ const CoachesSection = () => {
               For Clubs & <span className="text-neon-green italic">Scouts.</span>
             </h2>
             <p className="text-xl text-white/50 leading-relaxed mb-8">
-              We do not represent every player who books our system. We act as a pre-filter. When you receive a NextGoal engineered profile, it means the player possesses the tactical baseline required for your level.
+              We don't send players. We send pre-qualified profiles. Each player is filtered, structured, and optimized before reaching your desk. Coaches don’t waste time reviewing unstructured footage.
             </p>
             <ul className="space-y-4">
               {[
@@ -463,10 +305,10 @@ const TransformationSection = () => {
       type: "video",
       src: "https://res.cloudinary.com/dtrf1c2wm/video/upload/q_auto/f_auto/v1775667733/Before_after_fbb3cv.mp4",
       caseStudy: {
-        player: "U18 Midfielder (Released)",
-        problem: "Zero responses from 50+ emails. Footage was unstructured and diluted his actual tactical intelligence.",
-        action: "Stripped out all basic passes. Built a 90-second high-density filter focusing purely on line-breaking vision.",
-        result: "Direct contact from 3 agencies; secured trial with Category-1 UK Academy."
+        player: "U18 Midfielder (UK)",
+        problem: "0 club responses from 50+ emails. Footage looked like a social media edit.",
+        action: "Highlights rebuilt around off-ball movement + decision-making.",
+        result: "2 trial invitations in 21 days."
       },
       badge: "Tactical Overhaul"
     },
@@ -475,10 +317,10 @@ const TransformationSection = () => {
       type: "video",
       src: "https://res.cloudinary.com/dtrf1c2wm/video/upload/q_auto/f_auto/v1775672653/Benjamin_%C5%A0e%C5%A1ko_Matchday_video_Vs_Eintracht_Frankfurt_football_soccer_gameday_matchday_xzlond.mp4",
       caseStudy: {
-        player: "Senior Striker (Non-League)",
-        problem: "High goalscorer, but agents ignored his emails because his highlights looked like amateur park football.",
-        action: "Reformatted clips to emphasize movement off the ball, pressing intensity, and first-touch efficiency.",
-        result: "Signed professional representation; earned 2 trial invitations in the German Regionalliga."
+        player: "Senior Striker (Germany)",
+        problem: "Ignored by agents. Footage was unstructured and diluted his finishing efficiency.",
+        action: "Reformatted clips to emphasize pressing intensity and first-touch efficiency.",
+        result: "Signed professional representation; 2 trial invitations in Regionalliga."
       },
       badge: "Elite Precision",
       isVertical: true
@@ -488,10 +330,10 @@ const TransformationSection = () => {
       type: "youtube",
       src: "https://www.youtube.com/embed/ZJbOvWvvRKo",
       caseStudy: {
-        player: "US College Aspirant",
-        problem: "Lacked the centralized, verified match data that D1 college recruiters require to allocate scholarship budgets.",
-        action: "Engineered a data-backed technical profile proving consistent athletic baseline against high-level opponents.",
-        result: "Awarded Full-Ride NCAA D1 Scholarship within 14 days of distribution."
+        player: "18yo Winger (USA)",
+        problem: "Lacked centralized, verified match data for D1 college recruiters.",
+        action: "Engineered a data-backed technical profile proving consistent athletic baseline.",
+        result: "Awarded Full-Ride NCAA D1 Scholarship within 14 days."
       },
       badge: "Scholarship Grade"
     }
@@ -599,9 +441,9 @@ const TransformationSection = () => {
 
                 <div className="space-y-6">
                   {[
-                    { label: "The Problem", text: tabs[activeTab].caseStudy.problem, icon: X, color: "text-red-500" },
-                    { label: "The Strategy", text: tabs[activeTab].caseStudy.action, icon: Target, color: "text-neon-green" },
-                    { label: "The Result", text: tabs[activeTab].caseStudy.result, icon: Star, color: "text-white" },
+                    { label: "Initial Situation", text: tabs[activeTab].caseStudy.problem, icon: X, color: "text-red-500" },
+                    { label: "What Was Changed", text: tabs[activeTab].caseStudy.action, icon: Target, color: "text-neon-green" },
+                    { label: "Measurable Result", text: tabs[activeTab].caseStudy.result, icon: Star, color: "text-white" },
                   ].map((item, i) => (
                     <div key={i} className="flex gap-6 p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:bg-white/[0.04] transition-colors">
                       <div className={`mt-1 ${item.color}`}>
@@ -676,7 +518,7 @@ const PathsSection = () => {
               href="#quote"
               className="px-12 py-5 rounded-2xl bg-white/10 text-white font-black hover:bg-white/20 transition-all uppercase tracking-widest text-sm text-center"
             >
-              Submit For Basic Review
+              Submit Your Footage For Evaluation
             </a>
           </motion.div>
 
@@ -710,7 +552,7 @@ const PathsSection = () => {
               href="#quote"
               className="px-12 py-5 rounded-2xl bg-neon-green text-black font-black hover:scale-105 transition-all uppercase tracking-widest text-sm shadow-[0_0_30px_rgba(204,255,0,0.3)] text-center"
             >
-              Apply For Elite Selection
+              Apply Now If You're Serious
             </a>
           </motion.div>
         </div>
@@ -761,7 +603,7 @@ Strategic Notes: ${formData.notes}`;
               <span className="text-[10px] font-black uppercase tracking-widest text-red-500">Waitlist Active - Filtering Applicants</span>
             </div>
             <h2 className="font-display text-4xl lg:text-7xl font-bold leading-tight tracking-tighter mb-6 text-white">
-              Apply For <span className="text-neon-green italic">Selection.</span>
+              Apply Now If You're <span className="text-neon-green italic">Serious.</span>
             </h2>
             <p className="text-xl text-white/50 max-w-2xl mx-auto">
               We process hundreds of applications monthly. We reject the majority. Apply only if you possess the work ethic and raw footage necessary to compete at the professional level.
@@ -881,7 +723,7 @@ Strategic Notes: ${formData.notes}`;
                 className="w-full py-5 bg-neon-green text-black font-black rounded-xl hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(204,255,0,0.3)] hover:shadow-[0_0_50px_rgba(204,255,0,0.5)] uppercase tracking-widest"
               >
                 <Send className="w-5 h-5" />
-                <span>Submit For Evaluation</span>
+                <span>Submit Your Footage For Evaluation</span>
               </button>
             </form>
           </motion.div>
@@ -905,7 +747,7 @@ Strategic Notes: ${formData.notes}`;
                 </h3>
                 
                 <p className="text-white/50 leading-relaxed mb-10">
-                  Discuss your current career trajectory. We help you choose the recruitment profile path that aligns with your professional aspirations.
+                  Discuss your current career trajectory. We direct you toward the exact recruitment profile path that aligns with your professional aspirations.
                 </p>
                 
                 <a 
@@ -1003,7 +845,7 @@ const Navbar = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
             href="#quote"
             className="px-6 py-2.5 rounded-full text-xs uppercase tracking-widest font-black bg-neon-green text-black shadow-[0_0_20px_rgba(204,255,0,0.3)] hover:shadow-[0_0_30px_rgba(204,255,0,0.5)] hover:scale-105 transition-all duration-300"
           >
-            Submit Footage
+            Get Evaluated
           </a>
         </div>
 
@@ -1052,7 +894,7 @@ const Navbar = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="w-full py-5 rounded-2xl bg-neon-green text-black font-black text-center text-sm shadow-[0_0_30px_rgba(204,255,0,0.4)] uppercase tracking-widest"
               >
-                Submit Footage For Evaluation
+                Submit Your Footage For Evaluation
               </a>
               <a 
                 href="https://wa.me/447480675324"
@@ -1180,12 +1022,12 @@ export default function App() {
             </div>
             
             <h1 className="font-display text-4xl lg:text-7xl font-bold leading-[0.9] tracking-tighter mb-8 text-white">
-              Talent Doesn't<br />Get You Signed.<br />
-              <span className="text-neon-green italic">Presentation Does.</span>
+              <span className="text-white text-3xl lg:text-5xl block mb-2">Talent Doesn't Get You Signed.</span>
+              <span className="text-red-500 italic block">Bad Presentation Gets You Ignored.</span>
             </h1>
             
             <p className="text-xl lg:text-2xl text-white/50 leading-relaxed mb-12 max-w-xl">
-              Most elite players stay invisible because their highlight reels look like social media posts. We engineer tactical recruitment assets that force pro clubs to pay attention.
+              Scouts don't have time to figure you out. If your value isn't clear in seconds, you get skipped. Stop wasting your career on highlight reels that look like social media edits.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-6 mb-16">
@@ -1193,7 +1035,7 @@ export default function App() {
                 href="#quote"
                 className="w-full sm:w-auto px-8 py-5 bg-neon-green text-black font-black rounded-xl hover:scale-[1.03] transition-all flex items-center justify-center gap-3 group relative overflow-hidden shadow-[0_0_30px_rgba(204,255,0,0.4)] hover:shadow-[0_0_50px_rgba(204,255,0,0.6)]"
               >
-                <span className="relative z-10 text-base uppercase tracking-widest text-center">Submit Footage<br/>For Evaluation</span>
+                <span className="relative z-10 text-xs font-black uppercase tracking-widest text-center">Submit Your Footage<br/>For Evaluation</span>
                 <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform relative z-10 hidden sm:block" />
               </a>
               <button 
@@ -1314,9 +1156,6 @@ export default function App() {
 
       <SystemSection />
 
-      {/* Testimonial Section */}
-      <TestimonialSection />
-
       {/* Coaches Section */}
       <CoachesSection />
 
@@ -1345,4 +1184,3 @@ export default function App() {
     </div>
   );
 }
-
